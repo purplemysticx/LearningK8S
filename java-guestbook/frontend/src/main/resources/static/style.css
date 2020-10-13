@@ -44,9 +44,9 @@ h1 {
 .card-body {
     margin: 10px;
 }
-  
+
 .posts:after {
-    background: linear-gradient(to right, #4285f4 25%,#db4437 25%, #db4437 50%, #f4b400 50%, #f4b400 75%, #0f9d58 75%);
+    background: linear-gradient(to right, #4285f4 25%, #db4437 25%, #db4437 50%, #f4b400 50%, #f4b400 75%, #0f9d58 75%);
     position: absolute;
     content: '';
     height: 4px;

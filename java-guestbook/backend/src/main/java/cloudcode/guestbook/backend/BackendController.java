@@ -1,12 +1,11 @@
 package cloudcode.guestbook.backend;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,10 +15,12 @@ import java.util.List;
 @RestController
 public class BackendController {
 
-    @Autowired private MessageRepository repository;
+    @Autowired
+    private MessageRepository repository;
 
     /**
      * endpoint for retrieving all guest book entries stored in database
+     *
      * @return a list of GuestBookEntry objects
      */
     @GetMapping("/messages")
@@ -31,6 +32,7 @@ public class BackendController {
 
     /**
      * endpoint for adding a new guest book entry to the database
+     *
      * @param message a message object passed in the HTTP POST request
      */
     @PostMapping("/messages")
