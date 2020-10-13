@@ -1,0 +1,24 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+build:
+    artifacts:
+        -
+            image: java-hello-world
+            jib: { }
+    tagPolicy:
+        sha256: { }
+deploy:
+    kubectl:
+        manifests:
+            - ./kubernetes-manifests/**.yaml
+profiles:
+    -
+        name: cloudbuild
+        build:
+            googleCloudBuild: { }
+    -
+        name: dockerfile
+        build:
+            artifacts:
+                -
+                    image: java-hello-world
