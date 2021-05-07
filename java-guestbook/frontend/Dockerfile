@@ -18,7 +18,7 @@ COPY . ./
 RUN mvn -Dmaven.test.skip=true package
 
 # Build runtime image.
-FROM docker.io/openjdk:8-jdk-alpine
+FROM docker.io/openjdk:17-jdk-alpine
 
 # Copy the compiled files over.
 COPY --from=build-env /app/target /app/
